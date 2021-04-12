@@ -1,12 +1,12 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "goodmovies";
- 
+<?php 
+require_once("constants.php");
+
 // Create connection in MySQLi
+function connect_to_db($server_name, $user_name, $password, $data_base='') {
+    return mysqli_connect($server_name, $user_name, $password, $data_base);
+}
  
-$db = mysqli_connect($servername, $username, $password, $dbname);
+$db = connect_to_db($db_credentials['server_name'], $db_credentials['db_login'], $db_credentials['db_password'], $db_credentials['db_project']);
  
 //Check connection in MySQLi
 if(!$db){
@@ -20,14 +20,13 @@ function query($sql) {
     
     if ($result = $db -> query($sql)) {
         $row = $result -> fetch_row();
-        $person_array = array(
-            'person_id' => $row[0]
-            , 'first_name' => $row[1]
-            , 'last_name' => $row[2]
-            , 'email' => $row[3]
-        );
+
+        $db -> close();
+        return $row;
+    } else {
+        $db -> close();
+        return null;
     }
 
-    $db -> close();
-    return $person_array;
+    
 }

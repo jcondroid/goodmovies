@@ -1,7 +1,5 @@
 <?php
-require_once("library.php");
-$person = get_user_by_user_id(1);
-
+session_start();
 // print_r($person);
 ?>
 <!DOCTYPE html>
@@ -10,26 +8,52 @@ $person = get_user_by_user_id(1);
 <title>Page Title</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="./css/style.css">
-<script src=""></script>
+<script src="./javascript/person.js"></script>
 
 <body>
     <div id="header">
-        <img src="logo.png" alt="Logo" style="width:50%">
-        <div id="header_login_container">
+        <img src="logo.png" alt="Logo" style="width:40%">
+        <div id="header_login_container" style="width:60%">
+            <?php
+            if ((isset($_SESSION['person_id']))) {
+            ?>
+            <div id="menu_container">
+                <div id="menu">
+                    Menu
+                </div>
+                <div id="my_movies">
+                    My Movies
+                </div>
+                <div id="recommendations">
+                    Recommendations
+                </div>
+            </div>
+            <input placeholder="Search movies"></input>
+                
+            
+            <?php
+            } else {
+            ?>
             <div id="header_login_row_1">
-                <form method="post" action="sign_in.php">
-                    <input placeholder="Email address"></input>
-                    <input placeholder="Password" type="password"></input>
-                    <button>Sign in</button>
+                <form name="sign_in" id="sign_in" method="post" action="./sign_in.php">
+                    <input name="email" id="formSignInEmail" placeholder="Email address"></input>
+                    <input name="password" id="formSignInPassword" placeholder="Password" type="password"></input>
+                    <input type="submit" value="Sign in">
                 </form>
             </div>
             <div id="header_login_row_2">
-                <!-- <input></input> Checkbox-->
+                <!-- <input type="checkbox" id="remember_me" name="remember_me" checked=""> -->
                 Forgot password?
             </div>
+            <?php
+                
+            }
+            ?>
         </div>
     </div>
 
+    <!-- Test Fetch -->
+    <button onclick="send_to_api('getperson', '', '', 1)">Click HERE</button>
 
     <div id="marketing" class="marketing-image">
         <!-- <img src="marketing.png" alt="Marketing" style="width:100%"> -->
