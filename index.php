@@ -53,7 +53,7 @@ session_start();
     </div>
 
     <!-- Test Fetch -->
-    <button onclick="send_to_api('getperson', '', '', 1)">Click HERE</button>
+    <!-- <button onclick="send_to_api('getperson', '', '', 1)">Click HERE</button> -->
 
     <div id="marketing" class="marketing-image">
         <!-- <img src="marketing.png" alt="Marketing" style="width:100%"> -->
