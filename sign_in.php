@@ -43,7 +43,7 @@ function authenticate_person() {
                 FROM person
                 WHERE email=\"".$email."\"
                 AND pass_word=PASSWORD(\"".$password."\")";
-        echo $sql;
+        // echo $sql;
         $data = query($sql);
         print_r($sql);
         if(isset($data)) { // Successfully logged in. Now redirect
