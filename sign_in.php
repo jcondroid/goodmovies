@@ -43,9 +43,9 @@ function authenticate_person() {
                 FROM person
                 WHERE email=\"".$email."\"
                 AND pass_word=PASSWORD(\"".$password."\")";
-        
+        echo $sql;
         $data = query($sql);
-        
+        print_r($sql);
         if(isset($data)) { // Successfully logged in. Now redirect
             
 
@@ -67,7 +67,7 @@ function authenticate_person() {
             ?>
             <body style="background-color: #cccccc;">
                 <div id="header">
-                    <img src="logo.png" alt="Logo" style="width:50%">
+                    <img src="./resources/logo.svg" alt="Logo" style="width:50px">
                 </div>
 
                 <div id="signup_container">
