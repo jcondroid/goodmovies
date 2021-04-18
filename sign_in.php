@@ -45,7 +45,7 @@ function authenticate_person() {
                 AND pass_word=PASSWORD(\"".$password."\")";
         // echo $sql;
         $data = query($sql);
-        print_r($sql);
+        print_r($data);
         if(isset($data)) { // Successfully logged in. Now redirect
             
 
