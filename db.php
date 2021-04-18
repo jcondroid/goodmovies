@@ -12,7 +12,7 @@ $db = connect_to_db($db_credentials['server_name'], $db_credentials['db_login'],
 if(!$db){
     die("Error on the connection");// .mysqli_error());
 } else {
-    // echo "Connected Sucessfully";
+    echo "Connected Sucessfully";
 }
 
 function query($sql) {
