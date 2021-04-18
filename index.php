@@ -12,7 +12,7 @@ session_start();
 
 <body>
     <div id="header">
-        <img src="logo.png" alt="Logo" style="width:40%">
+        <img src="./resources/logo.svg" alt="Logo" style="width:50px">
         <div id="header_login_container" style="width:60%">
             <?php
             if ((isset($_SESSION['person_id']))) {
