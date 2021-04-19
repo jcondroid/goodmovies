@@ -16,6 +16,8 @@ require_once("db.php");
 is_already_logged_in();
 authenticate_person();
 
+close_db();
+
 function is_already_logged_in() {
     if ((isset($_SESSION['person_id']))) {
         header("location: index.php");
@@ -45,7 +47,7 @@ function authenticate_person() {
                 AND pass_word=SHA1(\"".$password."\")";
         // echo $sql;
         $data = query($sql);
-        print_r($data);
+        // print_r($data);
         if(isset($data)) { // Successfully logged in. Now redirect
             
 
@@ -56,12 +58,12 @@ function authenticate_person() {
 
 
             ?>
-            <form id="redirect_to_home_page" method="post" action="home.php">
+            <!-- <form id="redirect_to_home_page" method="post" action="home.php">
                 <input type="hidden" id="customInvoiceId" .... />
                 <input type="hidden" .... />
 
                 <input type="submit" id="submitButton" />
-            </form>
+            </form> -->
             <?php
         } else { // Display error and to try to Sign in again
             ?>
@@ -90,7 +92,7 @@ function authenticate_person() {
         }
         
     } else {
-        echo "naw";
+        header("location: index.php");
     }
 
 }

@@ -12,7 +12,7 @@ $db = connect_to_db($db_credentials['server_name'], $db_credentials['db_login'],
 if(!$db){
     die("Error on the connection");// .mysqli_error());
 } else {
-    echo "Connected Sucessfully";
+    // echo "Connected Sucessfully";
 }
 
 function query($sql) {
@@ -21,12 +21,21 @@ function query($sql) {
     if ($result = $db -> query($sql)) {
         $row = $result -> fetch_row();
 
-        $db -> close();
         return $row;
     } else {
-        $db -> close();
         return null;
     }
 
     
+}
+
+function insert($sql) {
+    global $db;
+
+    return $db -> query($sql);
+}
+
+function close_db() {
+    global $db;
+    $db -> close();
 }

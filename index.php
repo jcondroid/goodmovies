@@ -43,7 +43,7 @@ session_start();
             </div>
             <div id="header_login_row_2">
                 <!-- <input type="checkbox" id="remember_me" name="remember_me" checked=""> -->
-                Forgot password?
+                <!-- Forgot password? -->
             </div>
             <?php
                 
@@ -62,11 +62,11 @@ session_start();
                 <h2>Create a free account!</h2>
             </div>
             <div id="marketing_signup_row_2">
-                <form method="post" action="sign_up.php">
-                    <input placeholder="Name"></input>
-                    <input placeholder="Email address"></input>
-                    <input placeholder="Password" type="password"></input>
-                    <button>Sign up</button>
+                <form name="sign_up" id="sign_up" method="post" action="./sign_up.php">
+                    <input name="first_name" id="formSignUpFirstName" placeholder="Name"></input>
+                    <input name="email" id="formSignUpEmail" placeholder="Email address"></input>
+                    <input name="password" id="formSignUpPassword" placeholder="Password" type="password"></input>
+                    <input type="submit" value="Sign up">
                     <p>By clicking "Sign up" I agree to the Logo Terms of Service and confirm that I am at least 13 years old.</p>
                 </form>
             </div>

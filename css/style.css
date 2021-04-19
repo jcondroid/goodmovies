@@ -55,6 +55,7 @@
     background-size: cover;
     background-attachment: fixed;
     position: relative;
+    padding-top: 20%;
 }
 
 .marketing-text {
