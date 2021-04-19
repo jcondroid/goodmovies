@@ -37,34 +37,26 @@ function log_out() {
 }
 
 function authenticate_person() {
-    if(isset($_POST['email']) && isset($_POST['password'])) { // Authentication successful
+    if(isset($_POST['email']) && isset($_POST['password'])) { // Required to check if authentication is successful
         $email = $_POST['email'];
         $password = $_POST['password'];
 
         $sql = "SELECT *
                 FROM person
                 WHERE email=\"".$email."\"
-                AND pass_word=SHA1(\"".$password."\")";
-        // echo $sql;
+                AND pass_word=PASSWORD(\"".$password."\")";
+        
         $data = query($sql);
-        // print_r($data);
+        
         if(isset($data)) { // Successfully logged in. Now redirect
-            
-
             $_SESSION['person_id'] = $data[0];
             $_SESSION['first_name'] = $data[1];
             $_SESSION['last_name'] = $data[2];
             $_SESSION['email'] = $data[3];
 
-
-            ?>
-            <!-- <form id="redirect_to_home_page" method="post" action="home.php">
-                <input type="hidden" id="customInvoiceId" .... />
-                <input type="hidden" .... />
-
-                <input type="submit" id="submitButton" />
-            </form> -->
-            <?php
+            if ((isset($_SESSION['person_id']))) {
+                header("location: index.php");
+            }
         } else { // Display error and to try to Sign in again
             ?>
             <body style="background-color: #cccccc;">

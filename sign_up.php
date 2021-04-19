@@ -74,7 +74,7 @@ function sign_up() {
             $first_name = $_POST['first_name'];
 
             $sql = "INSERT INTO person (first_name, email, pass_word)
-                    VALUES (\"$first_name\", \"$email\", SHA1(\"$password\"))";
+                    VALUES (\"$first_name\", \"$email\", PASSWORD(\"$password\"))";
             
             $data = insert($sql);
             if($data) {

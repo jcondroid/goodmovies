@@ -54,7 +54,9 @@ session_start();
 
     <!-- Test Fetch -->
     <!-- <button onclick="send_to_api('getperson', '', '', 1)">Click HERE</button> -->
-
+    <?php
+    if (!(isset($_SESSION['person_id']))) {
+    ?>
     <div id="marketing" class="marketing-image">
         <!-- <img src="marketing.png" alt="Marketing" style="width:100%"> -->
         <div id="marketing_signup_container">
@@ -72,6 +74,14 @@ session_start();
             </div>
         </div>
     </div>
+    <?php
+    } else {
+        // Show movies
+        echo "<div id=\"movies_container\">";
+        echo "Logged in. Hello, " . $_SESSION['first_name'];
+        echo "</div>";
+    }
+    ?>
 
 </body>
 
