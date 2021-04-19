@@ -44,7 +44,7 @@ function authenticate_person() {
         $sql = "SELECT *
                 FROM person
                 WHERE email=\"".$email."\"
-                AND pass_word=PASSWORD(\"".$password."\")";
+                AND pass_word=SHA1(\"".$password."\")";
         
         $data = query($sql);
         
