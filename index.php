@@ -8,7 +8,8 @@ session_start();
 <title>Page Title</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="./css/style.css">
-<script src="./javascript/person.js"></script>
+
+
 
 <body>
     <div id="header">
@@ -77,12 +78,23 @@ session_start();
     <?php
     } else {
         // Show movies
-        echo "<div id=\"movies_container\">";
-        echo "Logged in. Hello, " . $_SESSION['first_name'];
-        echo "</div>";
+        ?>
+        
+        <!-- Hello, <?=$_SESSION['first_name']?> -->
+        <div id="movies_editor_picks">Editor's Picks</div>
+        <hr style="width: 85%;">
+        <div id=movies_container>;
+            <!-- <div id="movie">
+                <div id="poster_link"></div>
+                <div id="movie_title"></div>
+            </div> -->
+        </div>
+        <?php
     }
     ?>
 
+<script src="./javascript/person.js"></script>
+<script src="./javascript/movies.js"></script>
 </body>
 
 </html>

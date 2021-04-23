@@ -15,13 +15,22 @@ if(!$db){
     // echo "Connected Sucessfully";
 }
 
-function query($sql) {
+function query($sql, $single_row=true) {
     global $db;
     
     if ($result = $db -> query($sql)) {
-        $row = $result -> fetch_row();
+        if($single_row) {
+            $row = $result -> fetch_row();
 
-        return $row;
+            return $row;
+        } else {
+            $array = $result -> fetch_all();
+
+            return $array;
+        }
+        
+
+        
     } else {
         return null;
     }
