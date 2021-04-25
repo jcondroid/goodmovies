@@ -27,7 +27,7 @@ function send_to_api(action) {
 
                 var poster_link_div = document.createElement("div");
                 poster_link_div.style.backgroundImage = "url(\"" + results[i][1] + "\")";
-                poster_link_div.id = "poster_link";
+                poster_link_div.className = "poster_link";
 
                 var title_div = document.createElement("a");
                 title_div.style.fontWeight = "bold";

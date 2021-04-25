@@ -9,8 +9,17 @@ if (!empty($_GET['action'])) {
         case "getperson":
             getPerson();
             break;
+        case "getpersonmovie":
+            getPersonMovie();
+            break;
+        case "getmovie":
+            getMovieByMovieId();
+            break;
         case "getmovies":
             getMovies();
+            break;
+        case "insertpersonmovie":
+            insertPersonMovie();
             break;
         default:
             response(400, "Invalid Operation $action", NULL);
@@ -31,6 +40,51 @@ function createPerson()
 /**
  * READ
  */
+function getPersonMovie()
+{
+    isset($_GET['movie_id']) ? $movie_id = $_GET['movie_id'] : $movie_id = "";
+    isset($_GET['person_id']) ? $person_id = $_GET['person_id'] : $person_id = "";
+    
+    if (!empty($movie_id) && !empty($person_id)) {
+        $personMovie = get_person_movie_by_person_and_movie_id($person_id, $movie_id);
+    }
+
+    if (empty($personMovie)) {
+        response(401, "Could not find person movie record", NULL);
+    } else {
+        $personMovieArray = array();
+        $personMovieArray = array(
+            'person_movie_id' => $personMovie[0], 'person_id' => $personMovie[1], 'movie_id' => $personMovie[2], 'rating' => $personMovie[3]
+        );
+        response(200, "Success: person movie found ", $personMovieArray);
+    }
+}
+
+function getMovieByMovieId()
+{
+    isset($_GET['movie_id']) ? $movie_id = $_GET['movie_id'] : $movie_id = "";
+    
+    if (!empty($movie_id)) {
+        $movie = get_movie_by_movie_id($movie_id);
+    }
+
+    if (empty($movie)) {
+        response(401, "Could not find movie", NULL);
+    } else {
+        $movie_array = array();
+        // for($i = 0; $i < sizeof($movies); $i++) {
+        //     $movie_array = array(
+        //         'movie_id' => $movies[$i], 'poster_link' => $movies[1], 'title' => $movies[2], 'released_year' => $movies[3]
+        //     );
+        //     array_push($movies_array, )
+        // }
+        $movie_array = array(
+            'movie_id' => $movie[0], 'poster_link' => $movie[1], 'title' => $movie[2], 'released_year' => $movie[3]
+        );
+        response(200, "Success: movies Found ", $movie);
+    }
+}
+
 function getMovies()
 {
     $movies = get_movies();
@@ -51,6 +105,39 @@ function getMovies()
         response(200, "Success: movies Found ", $movies);
     }
 }
+
+function insertPersonMovie()
+{
+    isset($_GET['movie_id']) ? $movie_id = $_GET['movie_id'] : $movie_id = "";
+    isset($_GET['person_id']) ? $person_id = $_GET['person_id'] : $person_id = "";
+    isset($_GET['rating']) ? $rating = $_GET['rating'] : $rating = "";
+    
+    if (!empty($movie_id) && !empty($person_id) && !empty($rating)) {
+        // echo "test";
+        // Try to update first
+        $updatePersonMovie = update_person_movie_by_person_and_movie_id($person_id, $movie_id, $rating);
+        // echo $updatePersonMovie;
+
+        if (empty($updatePersonMovie)) { // No person_movie record exists so create one
+            $insertPersonMovie = insert_person_movie_by_person_and_movie_id($person_id, $movie_id, $rating);
+            if (empty($insertPersonMovie)) { // No person_movie record exists so create one
+                response(401, "Could not insert a new person movie record", NULL);
+            } else {
+                response(200, "Success: inserted new person movie record ", $insertPersonMovie);
+            }
+            // response(401, "Could not find person movie record", NULL);
+        } else {
+            // $personMovieArray = array();
+            // $personMovieArray = array(
+                // 'person_movie_id' => $personMovie[0], 'person_id' => $personMovie[1], 'movie_id' => $personMovie[2], 'rating' => $personMovie[3]
+            // );
+            response(200, "Success: updated person movie record ", $updatePersonMovie);
+        }
+    } else {
+        response(400, "Invalid Request", NULL);
+    }
+}
+
 function getPerson()
 {
     if (!empty($_GET['person_id'])) {

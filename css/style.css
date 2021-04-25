@@ -12,13 +12,20 @@
     justify-content: space-evenly;
 }
 
-#menu_container {
+#home_container {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: space-evenly;
     width: 46%;
     /* width: max-content; */
+}
+
+#logo {
+    background-image: url("../resources/logonew.svg");
+    width: 13%;
+    height: 59px;
+    background-size: contain;
 }
 
 /* #marketing {
@@ -89,12 +96,54 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
-    padding: 5px;
+    padding: 0 5px;
     width: 200px;
 }
 
-#poster_link {
+.poster_link {
     width: 180px;
     height: 250px;
     background-size: cover;
+}
+
+.movie_container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 0 10%;
+}
+
+.movie_title {
+    width: 85%;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+.move_description {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 50%;
+}
+
+/*---------- star rating ----------*/
+.movie_rating_container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+.unselected_stars {
+    display: flex;
+    color: #b1b1b1c7;
+}
+.selected_stars {
+    color: #FFBC0B;
 }

@@ -44,6 +44,14 @@ function insert($sql) {
     return $db -> query($sql);
 }
 
+function update($sql) {
+    global $db;
+
+    $db -> query($sql);
+
+    return $db -> affected_rows;
+}
+
 function close_db() {
     global $db;
     $db -> close();

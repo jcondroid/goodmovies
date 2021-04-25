@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 137" xmlns="http://www.w3.org/2000/svg">
+  <g id="icon" transform="matrix(0.23, 0, 0, 0.23, 65.021576, 65.179604)">
+    <g id="g55" style="">
+      <g id="icon_piece" transform="matrix(1 0 0 1 -76 -166)">
+        <path id="path8" stroke-linecap="round" d="m 312.439 180 h -264.879 c -6.354 0 -12.02 -4.004 -14.14 -9.995 c -2.27 -6.41 -3.42 -13.141 -3.42 -20.005 c 0 -21.867 12.028 -41.635 30.537 -52.081 c -0.357 -2.624 -0.537 -5.266 -0.537 -7.919 c 0 -33.084 26.916 -60 60 -60 c 2.652 0 5.295 0.18 7.919 0.537 c 10.447 -18.508 30.214 -30.537 52.081 -30.537 s 41.634 12.029 52.081 30.537 c 2.624 -0.357 5.267 -0.537 7.919 -0.537 c 33.084 0 60 26.916 60 60 c 0 2.653 -0.18 5.295 -0.537 7.919 c 18.509 10.447 30.537 30.214 30.537 52.081 c 0 6.863 -1.15 13.594 -3.42 20.005 c -2.121 5.991 -7.786 9.995 -14.141 9.995 z" transform=" translate(-180, -90)" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,225,77); fill-rule: nonzero; opacity: 1;"/>
+      </g>
+      <g id="g13" transform="matrix(1 0 0 1 -1 -166)">
+        <path id="path11" stroke-linecap="round" d="m 312.439 180 c 6.354 0 12.02 -4.004 14.141 -9.995 c 2.27 -6.411 3.42 -13.142 3.42 -20.005 c 0 -21.867 -12.028 -41.634 -30.537 -52.081 c 0.357 -2.624 0.537 -5.266 0.537 -7.919 c 0 -33.084 -26.916 -60 -60 -60 c -2.652 0 -5.295 0.18 -7.919 0.537 c -10.447 -18.508 -30.214 -30.537 -52.081 -30.537 v 180 z" transform=" translate(-255, -90)" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,187,51); fill-rule: nonzero; opacity: 1;"/>
+      </g>
+      <g id="g17" transform="matrix(1 0 0 1 166 166)">
+        <path id="path15" stroke-linecap="round" d="m 512 392 c 0 -33.08 -26.92 -60 -60 -60 c -10.92 0 -21.17 2.93 -30 8.05 c -17.92 10.4 -30 29.79 -30 51.95 c -33.08 0 -60 26.92 -60 60 s 26.92 60 60 60 c 10.57 0 20.9 -2.85 30 -8.18 c 9.1 5.33 19.43 8.18 30 8.18 c 33.08 0 60 -26.92 60 -60 c 0 -10.57 -2.85 -20.9 -8.18 -30 c 5.33 -9.1 8.18 -19.43 8.18 -30 z" transform=" translate(-422, -422)" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,225,77); fill-rule: nonzero; opacity: 1;"/>
+      </g>
+      <g id="g21" transform="matrix(1 0 0 1 -76 -146.61)">
+        <path id="path19" stroke-linecap="round" d="m 201.213 128.787 c -3.839 0 -7.677 -1.464 -10.606 -4.393 c -2.834 -2.834 -6.601 -4.394 -10.607 -4.394 s -7.773 1.56 -10.607 4.394 c -5.858 5.858 -15.355 5.857 -21.213 -0.001 s -5.857 -15.355 0 -21.213 c 8.5 -8.499 19.8 -13.18 31.82 -13.18 s 23.32 4.681 31.82 13.18 c 5.858 5.858 5.858 15.355 0 21.213 c -2.928 2.929 -6.768 4.394 -10.607 4.394 z" transform=" translate(-180, -109.39)" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,187,51); fill-rule: nonzero; opacity: 1;"/>
+      </g>
+      <g id="g25" transform="matrix(1 0 0 1 -57.89 -146.61)">
+        <path id="path23" stroke-linecap="round" d="m 190.607 124.394 c 2.929 2.929 6.768 4.393 10.606 4.393 s 7.678 -1.465 10.607 -4.394 c 5.858 -5.858 5.857 -15.355 0 -21.213 c -8.5 -8.499 -19.8 -13.18 -31.82 -13.18 v 30 c 4.006 0 7.773 1.56 10.607 4.394 z" transform=" translate(-198.11, -109.39)" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(230,138,46); fill-rule: nonzero; opacity: 1;"/>
+      </g>
+      <g id="g29" transform="matrix(1 0 0 1 21.32 75)">
+        <path id="path27" stroke-linecap="round" d="m 329.94 166.35 l -30 332 c -0.7 7.73 -7.18 13.65 -14.94 13.65 h -53.18 l -7.186 -187 l 23.536 -175 h 66.83 c 4.21 0 8.23 1.77 11.07 4.88 c 2.85 3.11 4.25 7.27 3.87 11.47 z" transform=" translate(-277.32, -331)" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(204,41,41); fill-rule: nonzero; opacity: 1;"/>
+      </g>
+      <g id="g33" transform="matrix(1 0 0 1 -41.92 75)">
+        <path id="path31" stroke-linecap="round" d="m 248.17 150 l -16.35 362 h -51.82 v -362 z" transform=" translate(-214.08, -331)" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(223,231,244); fill-rule: nonzero; opacity: 1;"/>
+      </g>
+      <g id="g37" transform="matrix(1 0 0 1 -173.61 75)">
+        <path id="path35" stroke-linecap="round" d="m 128.18 512 h -53.18 c -7.76 0 -14.24 -5.92 -14.94 -13.65 l -30 -332 c -0.38 -4.2 1.02 -8.36 3.87 -11.47 c 2.84 -3.11 6.86 -4.88 11.07 -4.88 h 66.82 l 22.954 175 z" transform=" translate(-82.39, -331)" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(230,69,69); fill-rule: nonzero; opacity: 1;"/>
+      </g>
+      <g id="g41" transform="matrix(1 0 0 1 -110.09 75)">
+        <path id="path39" stroke-linecap="round" d="m 180 150 v 362 h -51.82 l -16.36 -362 z" transform=" translate(-145.91, -331)" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(240,247,255); fill-rule: nonzero; opacity: 1;"/>
+      </g>
+      <g id="g45" transform="matrix(1 0 0 1 -76 -91)">
+        <path id="path43" stroke-linecap="round" d="m 345 180 h -330 c -8.284 0 -15 -6.716 -15 -15 s 6.716 -15 15 -15 h 330 c 8.284 0 15 6.716 15 15 s -6.716 15 -15 15 z" transform=" translate(-180, -165)" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(204,41,41); fill-rule: nonzero; opacity: 1;"/>
+      </g>
+      <g id="g49" transform="matrix(1 0 0 1 14 -91)">
+        <path id="path47" stroke-linecap="round" d="m 180 180 h 165 c 8.284 0 15 -6.716 15 -15 s -6.716 -15 -15 -15 h -165 z" transform=" translate(-270, -165)" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(153,31,31); fill-rule: nonzero; opacity: 1;"/>
+      </g>
+      <g id="g53" transform="matrix(1 0 0 1 211 166)">
+        <path id="path51" stroke-linecap="round" d="m 503.82 422 c 5.33 9.1 8.18 19.43 8.18 30 c 0 33.08 -26.92 60 -60 60 c -10.57 0 -20.9 -2.85 -30 -8.18 v -163.77 c 8.83 -5.12 19.08 -8.05 30 -8.05 c 33.08 0 60 26.92 60 60 c 0 10.57 -2.85 20.9 -8.18 30 z" transform=" translate(-467, -422)" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,187,51); fill-rule: nonzero; opacity: 1;"/>
+      </g>
+    </g>
+  </g>
+  <g id="logo-name" style="" transform="matrix(1.68, 0, 0, 1.68, 350.831573, 66.0196)">
+    <text id="text63" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: #000000; fill-rule: nonzero; opacity: 1; white-space: pre;" font-weight="normal" font-style="normal" font-size="30" font-family="Cinzel Decorative"><tspan id="tspan61" y="9.42" x="-119.64">GOODMOVIES</tspan></text>
+  </g>
+</svg>
