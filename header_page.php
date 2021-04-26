@@ -39,8 +39,13 @@ if(isset($loadMovie)) {
                     Recommendations
                 </div>
             </div>
-            <input placeholder="Search movies"></input>
-                
+            <input placeholder="Search movies" style="width: 33%; border-radius: 8px;"></input>
+            
+            <a href="profile.php">
+                <i class="fas fa-user" style="padding: 0 5px;"></i>
+            </a>
+            
+            <i class="fas fa-users" style="padding: 0 5px; display: none;"></i>
             
             <?php
             } else {

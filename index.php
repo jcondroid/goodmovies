@@ -30,7 +30,7 @@ include_once("header_page.php");
         ?>
         <div id="movies_editor_picks">Editor's Picks</div>
         <hr style="width: 85%;">
-        <div id=movies_container>;
+        <div id=movies_container>
             <!-- <div id="movie">
                 <div id="poster_link"></div>
                 <div id="movie_title"></div>
