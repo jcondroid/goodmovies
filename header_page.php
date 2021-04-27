@@ -1,4 +1,6 @@
 <?php
+header("Cache-Control: no cache");
+session_cache_limiter("private_no_expire");
 session_start();
 // print_r($person);
 ?>
@@ -10,7 +12,58 @@ session_start();
 <link rel="stylesheet" href="./css/style.css">
 <script defer src="./javascript/all.js"></script>
 <script src="./javascript/jquery-3.6.0.min.js"></script>
+<script  type="text/javascript" src="./javascript/typeahead.bundle.js"></script>
+<script>
+$(document).ready(function(){
+    initialize_typeahead();
 
+    $('.typeahead').on('typeahead:selected', function (e, datum) {
+        console.log("datum: ", datum);
+        let url = "./api.php?action=getmoviebytitle&title=" + encodeURI(datum);
+
+        fetch(url)
+        .then(function(response) {
+            // The response is a Response instance.
+            // You parse the data into a useable format using `.json()`
+            return response.json();
+        }).then(function(data) {
+            // `data` is the parsed version of the JSON returned from the above endpoint.
+            // { "userId": 1, "id": 1, "title": "...", "body": "..." }
+            window.location.href = "movie.php?movie_id=" + data.data;
+        });
+    });
+});
+function initialize_typeahead() {
+    console.log("get_movies_array");
+    let url = "./api.php?action=getmoviesarray";
+
+    fetch(url)
+        .then((response) => response.json())
+        .then(function (data) {
+            // console.log(data);
+            var movies = data.data;
+            // console.log(results);
+            // Constructing the suggestion engine
+            // var Bloodhound = require('bloodhound-js');
+            var movies = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.whitespace,
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                local: movies
+            });
+
+            // Initializing the typeahead
+            $('.typeahead').typeahead({
+                hint: true,
+                highlight: true, /* Enable substring highlighting */
+                minLength: 1 /* Specify minimum characters required for showing suggestions */
+            },
+            {
+                name: 'movies',
+                source: movies
+            });
+        });
+}
+</script>
 <?php
 if(isset($loadMovie)) {
     echo "<body onload=\"get_movie($movie_id)\" style=\"display: none;\">";
@@ -39,7 +92,7 @@ if(isset($loadMovie)) {
                     Recommendations
                 </div>
             </div>
-            <input placeholder="Search movies" style="width: 33%; border-radius: 8px;"></input>
+            <input placeholder="Search movies" style="border-radius: 8px;" class="typeahead"></input>
             
             <a href="profile.php">
                 <i class="fas fa-user" style="padding: 0 5px;"></i>

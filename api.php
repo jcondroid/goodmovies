@@ -15,8 +15,14 @@ if (!empty($_GET['action'])) {
         case "getmovie":
             getMovieByMovieId();
             break;
+        case "getmoviebytitle":
+            getMovieByTitle();
+            break;
         case "getmovies":
             getMovies();
+            break;
+        case "getmoviesarray":
+            getMoviesArray();
             break;
         case "insertpersonmovie":
             insertPersonMovie();
@@ -85,6 +91,25 @@ function getMovieByMovieId()
     }
 }
 
+function getMovieByTitle()
+{
+    isset($_GET['title']) ? $title = $_GET['title'] : $title = "";
+    // echo "TITLE = " . $title;
+    
+    if (!empty($title)) {
+        $movie_id = get_movie_id_by_title($title);
+    }
+
+    if (empty($movie_id)) {
+        response(401, "Could not find movie id using title", NULL);
+    } else {
+        $movie_id = $movie_id[0];
+        // echo "mid: " . $movie_id;
+        response(200, "Movie id found", $movie_id);
+        // header("Location: movie.php?movie_id=$movie_id");
+    }
+}
+
 function getMovies()
 {
     $movies = get_movies();
@@ -103,6 +128,27 @@ function getMovies()
         //     'movie_id' => $movies[0], 'poster_link' => $movies[1], 'title' => $movies[2], 'released_year' => $movies[3]
         // );
         response(200, "Success: movies Found ", $movies);
+    }
+}
+
+function getMoviesArray()
+{
+    $movies = get_movies_array();
+
+    if (empty($movies)) {
+        response(401, "Could not find movies", NULL);
+    } else {
+        $movies_array = array_column($movies, 0);
+        // for($i = 0; $i < sizeof($movies); $i++) {
+            // $movie_array = array(
+            //     'movie_id' => $movies[$i], 'poster_link' => $movies[1], 'title' => $movies[2], 'released_year' => $movies[3]
+            // );
+            // array_push($movies_array, $movies[$i]);
+        // }
+        // $movies_array = array(
+        //     'movie_id' => $movies[0], 'poster_link' => $movies[1], 'title' => $movies[2], 'released_year' => $movies[3]
+        // );
+        response(200, "Success: movies Found ", $movies_array);
     }
 }
 

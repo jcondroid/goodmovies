@@ -1,21 +1,21 @@
 get_movies();
 
 function send_to_api(action) {
-    console.log("send_to_api");
+    // console.log("send_to_api");
     let url = "./api.php?action=" + action;
 
-    var fetch_request = new Request(url, {
-        method: "GET",
-        headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-        }
-    });
+    // var fetch_request = new Request(url, {
+    //     method: "GET",
+    //     headers: {
+    //         "Accept": "application/json",
+    //         "Content-Type": "application/json"
+    //     }
+    // });
 
     fetch(url)
         .then((response) => response.json())
         .then(function (data) {
-            console.log(data);
+            // console.log(data);
             results = data.data;
             let parent = document.getElementById("movies_container");
             

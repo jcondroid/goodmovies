@@ -6,7 +6,7 @@ function get_movie(movie_id) {
 }
 
 function give_rating(movie_id, rating) {
-    console.log("giving rating " + rating + " for " + movie_id);
+    // console.log("giving rating " + rating + " for " + movie_id);
     
     $(".fa-star").each(function(){ 
         $(this).css("color", "#b1b1b1c7");
@@ -24,17 +24,17 @@ function update_or_insert_rating(movie_id, rating) {
 
     fetch(url)
         .then(function(response) {
-            console.log("okd", response); 
+            // console.log("okd", response); 
         });
 }
 
 function get_person_movie(person_id, movie_id) {
-    console.log("person_id = ", person_id);
+    // console.log("person_id = ", person_id);
     send_to_api("getpersonmovie", person_id, movie_id);
 }
 
 function send_to_api(action, person_id, movie_id) {
-    console.log("send_to_api");
+    // console.log("send_to_api");
     // let url = "./api.php?action=" + action + "&movie_id=" + movie_id;
     let url = "./api.php?action=" + action + "&person_id=" + person_id + "&movie_id=" + movie_id;
 
@@ -44,8 +44,8 @@ function send_to_api(action, person_id, movie_id) {
             if(action === "getmovie") {
                 display_page(movie_id, data);
             } else if(action === "getpersonmovie") {
-                console.log("hereeeeeeeeeeeeeeeeeeeeeeeeeee");
-                console.log("get_person_movie_api_call: ", data.data['rating']);
+                // console.log("hereeeeeeeeeeeeeeeeeeeeeeeeeee");
+                // console.log("get_person_movie_api_call: ", data.data['rating']);
                 display_rating(data.data['rating']);
             } else {
 
@@ -54,7 +54,7 @@ function send_to_api(action, person_id, movie_id) {
 }
 
 function display_page(movie_id, data) {
-    console.log(data);
+    // console.log(data);
     results = data.data;
     let parent = document.getElementById("movie_container_"+movie_id);
     let titleParent = document.getElementById("movie_title_"+movie_id);
@@ -94,14 +94,17 @@ function display_page(movie_id, data) {
     gmAvgRating.innerHTML = "Average Rating: ";
 
     // TomatoMeter
+    /*
     var tomatoMeterRating = document.createElement("div");
     tomatoMeterRating.className = "tomato_average_movie_rating";
     tomatoMeterRating.innerHTML = "TomatoMeter: ";
-
+    */
     // Description
     var description_div = document.createElement("div");
     description_div.className = "move_description";
     description_div.innerHTML = results[7];
+    
+    document.getElementById("genre_"+movie_id).innerHTML = results[6];
 
     
     get_person_movie(person_id, movie_id);
@@ -118,15 +121,15 @@ function display_page(movie_id, data) {
 }
 
 function display_rating(rating) {
-    console.log("display rating: ", rating);
+    // console.log("display rating: ", rating);
     for(var i = 1; i < Number(rating) + 1; i++) {
-        console.log("i ", i);
+        // console.log("i ", i);
         document.getElementById("rating" + i).style.color = "#FFBC0B";
     }
 }
 
 function get_session() {
-    console.log("get_session");
+    // console.log("get_session");
     let url = "./session.php";
 
     fetch(url)

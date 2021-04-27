@@ -24,6 +24,13 @@ function get_person_by_person_id($person_id) {
     return query($sql);
 }
 
+function get_movies_array() {
+    $sql = "SELECT title
+            FROM movie
+            WHERE active=1";
+    return query($sql, false);
+}
+
 function get_movies() {
     $sql = "SELECT *
             FROM movie
@@ -45,6 +52,14 @@ function get_movie_by_movie_id($movie_id) {
             WHERE movie_id=$movie_id
             AND active=1";
     return query($sql);
+}
+
+function get_movie_id_by_title($title) {
+    $sql = "SELECT movie_id
+            FROM movie
+            WHERE title=\"$title\"
+            AND active=1";
+    return query($sql, true);
 }
 
 /**

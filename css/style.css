@@ -1,3 +1,8 @@
+html, body {
+    height:100%;
+    font-size: 18px;
+}
+
 #header {
     display: flex;
     flex-flow: row wrap;
@@ -95,9 +100,9 @@
 .movie_info {
     display: flex;
     flex-flow: column nowrap;
-    align-items: flex-start;
-    padding: 0 5px;
-    width: 200px;
+    align-items: baseline;
+    /* padding: 0 5px; */
+    width: 250px;
 }
 
 .poster_link {
@@ -115,6 +120,29 @@
     flex-wrap: wrap;
     flex-direction: row;
     padding: 0 10%;
+}
+
+.profile_container {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.person_container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding: 0px 5%;
+    height: 50%;
+    width: 50%;
 }
 
 .movie_title {
@@ -146,4 +174,54 @@
 }
 .selected_stars {
     color: #FFBC0B;
+}
+
+/*---------- typeahead ----------*/
+.bs-example {
+	font-family: sans-serif;
+	position: relative;
+	margin: 100px;
+}
+.typeahead, .tt-query, .tt-hint {
+	border: 2px solid #CCCCCC;
+	border-radius: 8px;
+	font-size: 22px; /* Set input font size */
+	height: 30px;
+	line-height: 30px;
+	outline: medium none;
+	/* padding: 8px 12px; */
+	width: 396px;
+}
+.typeahead {
+	background-color: #FFFFFF;
+}
+.typeahead:focus {
+	border: 2px solid #0097CF;
+}
+.tt-query {
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.tt-hint {
+	color: #999999;
+}
+.tt-menu {
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	margin-top: 12px;
+	padding: 8px 0;
+	width: 422px;
+}
+.tt-suggestion {
+	font-size: 22px;  /* Set suggestion dropdown font size */
+	padding: 3px 20px;
+}
+.tt-suggestion:hover {
+	cursor: pointer;
+	background-color: #0097CF;
+	color: #FFFFFF;
+}
+.tt-suggestion p {
+	margin: 0;
 }
