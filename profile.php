@@ -52,6 +52,12 @@ include_once("header_page.php");
                                         echo "<option value=\"2\"> Female</option>";
                                         echo "<option value=\"3\" selected>Non-Binary</option>";
                                         break;
+                                    default:
+                                        echo "<option value=\"0\">Select</option>";
+                                        echo "<option value=\"1\">Male</option>";
+                                        echo "<option value=\"2\"> Female</option>";
+                                        echo "<option value=\"3\">Non-Binary</option>";
+                                    break;
                                 }
                                 ?>
                             </select>
@@ -90,4 +96,3 @@ include_once("header_page.php");
 <!-- <script src="./javascript/person.js"></script> -->
 <!-- </body> -->
 <?php include 'footer.php'; ?>
-
