@@ -73,5 +73,15 @@ function update_person_movie_by_person_and_movie_id($person_id, $movie_id, $rati
     return update($sql);
 }
 
+function update_person_by_person_id($person_id, $first_name, $last_name, $gender) {
+    $sql = "UPDATE person
+            SET first_name=\"$first_name\"
+            , last_name=\"$last_name\"
+            , gender=$gender
+            WHERE person_id=$person_id";
+    echo $sql;
+    return update($sql);
+}
+
 
 ?>

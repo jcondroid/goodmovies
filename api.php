@@ -27,6 +27,9 @@ if (!empty($_GET['action'])) {
         case "insertpersonmovie":
             insertPersonMovie();
             break;
+        case "updateperson":
+            updatePerson();
+            break;
         default:
             response(400, "Invalid Operation $action", NULL);
             break;
@@ -194,7 +197,7 @@ function getPerson()
             response(401, "Could not find person", NULL);
         } else {
             $person_array = array(
-                'person_id' => $person[0], 'first_name' => $person[1], 'last_name' => $person[2], 'email' => $person[3]
+                'person_id' => $person[0], 'first_name' => $person[1], 'last_name' => $person[2], 'gender' => $person[3], 'email' => $person[4]
             );
             response(200, "Success: Person Found ", $person_array);
         }
@@ -209,8 +212,48 @@ function getPerson()
 function updateMovie($movieID)
 {
 }
-function updatePerson($personID)
-{
+function updatePerson() {
+    // print_r($_SESSION);
+
+    if (!empty($_GET['person_id'])) {
+        $person_id = $_GET['person_id'];
+        // print_r($_GET);
+        // print_r($_POST);
+    
+        if(isset($person_id) && $person_id > 0) {
+            header("HTTP/1.1 200");
+    
+            $person_id = $_GET['person_id'];
+            isset($_GET['first_name']) ? $first_name = $_GET["first_name"] : $first_name = "";
+            isset($_GET['last_name']) ? $last_name = $_GET["last_name"] : $last_name = "";
+            isset($_GET['gender']) ? $gender = $_GET["gender"] : $gender = "";
+        
+            // $json_response = json_encode($response);
+            $status = update_person_by_person_id($person_id, $first_name, $last_name, $gender);
+        
+            // $sql = "UPDATE person
+            //         SET first_name=\"$first_name\"
+            //         AND last_name=\"$last_name\"
+            //         AND gender=\"$gender\"
+            //         WHERE person_id=$person_id";
+            // echo $sql;
+            // return update($sql);
+
+            if (empty($status)) {
+                response(401, "Could not update person", NULL);
+            } else {
+                // $person_array = array(
+                //     'person_id' => $person[0], 'first_name' => $person[1], 'last_name' => $person[2], 'email' => $person[3]
+                // );
+                response(200, "Success: updated person", $status);
+            }
+            // echo "set";
+    
+            // response(200, "Person id $person_id", NULL);
+        } else {
+            response(400, "Invalid Request", NULL);
+        }
+    }
 }
 // Deactivate is not deleting but updating and setting active = 0
 function deactivateMovie($movieID)

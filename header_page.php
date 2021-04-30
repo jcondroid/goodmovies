@@ -3,6 +3,7 @@ header("Cache-Control: no cache");
 session_cache_limiter("private_no_expire");
 session_start();
 // print_r($person);
+require_once("library.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

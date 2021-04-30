@@ -132,6 +132,15 @@ html, body {
     align-items: flex-start;
 }
 
+.profile_input_container {
+    display: flex;
+    flex-flow: column nowrap;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 .person_container {
     display: flex;
     flex-flow: column nowrap;
@@ -141,8 +150,16 @@ html, body {
     flex-wrap: nowrap;
     flex-direction: column;
     padding: 0px 5%;
-    height: 50%;
     width: 50%;
+    height: 100%;
+}
+
+.hide {
+    position:absolute;
+    top:-1px;
+    left:-1px;
+    width:1px;
+    height:1px;
 }
 
 .movie_title {
