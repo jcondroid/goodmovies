@@ -8,7 +8,7 @@ require_once("library.php");
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
-<title>Page Title</title>
+<title>GoodMovies</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="./css/style.css">
 <script defer src="./javascript/all.js"></script>
@@ -70,7 +70,7 @@ if(isset($loadMovie)) {
     echo "<body onload=\"get_movie($movie_id)\" style=\"display: none;\">";
     // echo "<body>";
 } else {
-    echo "<body style=\"display: none;\">";
+    echo "<body>";// style=\"display: none;\">";
 }
 ?>
 

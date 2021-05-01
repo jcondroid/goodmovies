@@ -8,6 +8,8 @@ function send(that) {
     let lastName = that.last_name.value;
     let gender = that.gender.value;
 
+    
+
     let url = "./api.php?action=updateperson&person_id=" + person_id
      + "&first_name=" + firstName
      + "&last_name=" + lastName
