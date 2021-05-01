@@ -2,7 +2,33 @@ html, body {
     height:100%;
     font-size: 18px;
     margin: 0;
+    min-width: 1000px;
 }
+
+.primary_color1 {
+    background-color: #7917a6;
+}
+
+.primary_color2 {
+    background-color: #ec7ee2;
+}
+
+.primary_color3 {
+    background-color: #f7d5f3;
+}
+
+.secondary_color1 {
+    background-color: #ee42a5;
+}
+
+.secondary_color2 {
+    background-color: #a128a5;
+}
+
+.secondary_color3 {
+    background-color: #873b74;
+}
+
 
 #header {
     display: flex;
@@ -37,17 +63,33 @@ html, body {
 /* #marketing {
     background-image: url("../resources/marketing.png");
 } */
+#header_login_row_1 {
+    width: 100%;
+}
+
 form#sign_up {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
 }
 
-.create_account_input {
-    width: 33%;
+form#sign_in {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: baseline;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+.create_account_input, .sign_in_input {
+    width: 42%;
     margin-bottom: 0.43em;
     border-radius: 0.13em;
-    padding: 0.23em 0.5em;
+    padding: 0.33em 0.5em;
+}
+
+.sign_in_input {
+    margin-right: 0.7em;
 }
 
 #signup_container {
@@ -62,10 +104,17 @@ form#sign_up {
 }
 
 .sign_up_button_container {
-    display: flex;
+    display: inline-flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    width: 42%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    /* display: flex;
     flex-flow: row wrap;
     align-items: center;
-    width: 35%;
+    width: 42%; */
 }
 
 #marketing_signup_container {
@@ -74,9 +123,13 @@ form#sign_up {
     align-items: center;
     justify-content: flex-start;
     background-color: #cccccc;
-    width: 50%;
+    width: 46%;
     margin: auto;
     height: 50%;
+}
+
+.sign_up_terms {
+    margin: 0 0 0 8px;
 }
 
 .marketing-image {

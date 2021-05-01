@@ -71,7 +71,7 @@ if(isset($loadMovie)) {
     echo "<body onload=\"get_movie($movie_id)\" style=\"display: none;\">";
     // echo "<body>";
 } else {
-    echo "<body>";// style=\"display: none;\">";
+    echo "<body style=\"display: none;\">";
 }
 ?>
 
@@ -116,9 +116,9 @@ if(isset($loadMovie)) {
             ?>
             <div id="header_login_row_1">
                 <form name="sign_in" id="sign_in" method="post" action="./sign_in.php">
-                    <input name="email" id="formSignInEmail" placeholder="Email address"></input>
-                    <input name="password" id="formSignInPassword" placeholder="Password" type="password"></input>
-                    <input type="submit" value="Sign in">
+                    <input name="email" id="formSignInEmail" placeholder="Email address" class="sign_in_input"></input>
+                    <input name="password" id="formSignInPassword" placeholder="Password" type="password" class="sign_in_input"></input>
+                    <input type="submit" value="Sign in" class="btn btn-primary" style="background-color: #7917a6;">
                 </form>
             </div>
             <div id="header_login_row_2">

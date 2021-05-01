@@ -1,4 +1,6 @@
 <?php
+header("Cache-Control: no cache");
+session_cache_limiter("private_no_expire");
 session_start();
 ?>
 <!DOCTYPE html>
@@ -44,7 +46,8 @@ function authenticate_person() {
         $sql = "SELECT *
                 FROM person
                 WHERE email=\"".$email."\"
-                AND pass_word=SHA1(\"".$password."\")";
+                AND pass_word=SHA1(\"".$password."\")
+                AND active=1";
         
         $data = query($sql);
         
@@ -58,39 +61,49 @@ function authenticate_person() {
                 header("location: index.php");
             }
         } else { // Display error and to try to Sign in again
-            ?>
-            <body style="background-color: #cccccc;">
-                <div id="header">
-                    <div style="height: 67px">
-                        <a href="./">
-                            <img src='./resources/logonew.svg' style="width: 100%;max-height: 100%">
-                        </a>
-                    </div>
-                </div>
-
-                <div id="signup_container">
-                    <div id="signup_row_1">
-                    <p class="alert-danger">
-                        Sorry, that email or password isn't right. <!-- Click here to <a>reset password.</a> -->
-                    </p>
-                    </div>
-                    <div id="signup_row_2">
-                    <form name="sign_in" id="sign_in" method="post" action="./sign_in.php">
-                        <input name="email" id="formSignInEmail" placeholder="Email address"></input>
-                        <input name="password" id="formSignInPassword" placeholder="Password" type="password"></input>
-                        <input type="submit" value="Sign in">
-                    </form>
-                    </div>
-                </div>
-
-            </body>
-            <?php
+            display_sign_in("Sorry, that email or password isn't right.");
         }
         
     } else {
         header("location: index.php");
     }
 
+}
+
+function display_sign_in($error_message) {
+    ?>
+    <body style="background-color: #cccccc;">
+        <div id="header">
+            <div style="height: 67px">
+                <a href="./">
+                    <img src='./resources/logonew.svg' style="width: 100%;max-height: 100%">
+                </a>
+         </div>
+        </div>
+
+        <div id="signup_container">
+            <div id="signup_row_1">
+            <?php
+            if(!empty($error_message)) {
+                echo "<p class=\"alert-danger\">$error_message</p>";
+            }
+            ?>
+            </div>
+            <div id="signup_row_2" style="width: 100%;">
+            <div id="marketing_signup_container" style="flex-flow: column nowrap; width: 100%;">
+                <h2>Sign in</h2>
+                <div id="marketing_signup_row_2">
+                    <form name="sign_in" id="sign_in" method="post" action="./sign_in.php" style="flex-flow: column nowrap; width: 100%;">
+                        <input name="email" id="formSignInEmail" placeholder="Email address" class="create_account_input" style="width: 100%;"></input>
+                        <input name="password" id="formSignInPassword" placeholder="Password" type="password" class="create_account_input" style="width: 100%;"></input>
+                        <input type="submit" value="Sign in" class="btn btn-primary" style="background-color: #7917a6;">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </body>
+    <?php
 }
 
 ?>

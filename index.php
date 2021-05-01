@@ -1,6 +1,5 @@
 <?php
 include_once("header_page.php");
-print_r($_SESSION);
 ?>
 
     <!-- Test Fetch -->
@@ -16,12 +15,12 @@ print_r($_SESSION);
             </div>
             <div id="marketing_signup_row_2">
                 <form name="sign_up" id="sign_up" method="post" action="./sign_up.php">
-                    <input name="first_name" id="formSignUpFirstName" placeholder="Name" class="create_account_input"></input>
+                    <input name="first_name" id="formSignUpFirstName" placeholder="First Name" class="create_account_input"></input>
                     <input name="email" id="formSignUpEmail" placeholder="Email address" class="create_account_input"></input>
                     <input name="password" id="formSignUpPassword" placeholder="Password" type="password" class="create_account_input"></input>
                     <div class="sign_up_button_container">
-                        <input type="submit" value="Sign up" class="btn btn-primary">
-                        <p>By clicking "Sign up" I agree to the Logo Terms of Service and confirm that I am at least 13 years old.</p>
+                        <input type="submit" value="Sign up" class="btn btn-primary" style="background-color: #7917a6;">
+                        <p class="sign_up_terms">By clicking "Sign up" I agree to the Logo Terms of Service and confirm that I am at least 13 years old.</p>
                     </div>
                 </form>
             </div>

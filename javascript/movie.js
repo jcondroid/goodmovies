@@ -58,7 +58,7 @@ function display_page(movie_id, data) {
     results = data.data;
     let parent = document.getElementById("movie_container_"+movie_id);
     let titleParent = document.getElementById("movie_title_"+movie_id);
-    document.body.style.display="block"; // So it doesn't show elements moving
+    
     
     // Width of each element is 180px
     var movie_info_div = document.createElement("div");
