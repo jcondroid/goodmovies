@@ -18,6 +18,7 @@ function send_to_api(action) {
             // console.log(data);
             results = data.data;
             let parent = document.getElementById("movies_container");
+            document.body.style.display="block";
             
             // Width of each element is 180px
 

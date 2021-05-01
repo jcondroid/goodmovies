@@ -70,7 +70,7 @@ if(isset($loadMovie)) {
     echo "<body onload=\"get_movie($movie_id)\" style=\"display: none;\">";
     // echo "<body>";
 } else {
-    echo "<body>";
+    echo "<body style=\"display: none;\">";
 }
 ?>
 
