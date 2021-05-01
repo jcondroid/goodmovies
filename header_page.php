@@ -99,7 +99,7 @@ if(isset($loadMovie)) {
             <input placeholder="Search movies" style="border-radius: 8px;" class="typeahead"></input>
             
             <a href="profile.php">
-                <i class="fas fa-user" style="padding: 0 5px;"></i>
+                <i class="fas fa-user" style="padding: 0 5px; color: #7917a6; width: 50px;"></i>
             </a>
 
             <a href="logout.php">
