@@ -46,6 +46,14 @@ function get_person_movie_by_person_and_movie_id($person_id, $movie_id) {
     return query($sql);
 }
 
+function get_person_movie_by_person_id($person_id) {
+    $sql = "SELECT *
+            FROM person_movie
+            WHERE person_id=$person_id";
+    // echo $sql;
+    return query($sql, false);
+}
+
 function get_movie_by_movie_id($movie_id) {
     $sql = "SELECT *
             FROM movie

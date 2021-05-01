@@ -242,3 +242,23 @@ html, body {
 .tt-suggestion p {
 	margin: 0;
 }
+
+/**
+* My Movies
+*/
+.my_movies_table {
+    width: 85%;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+}
+
+/* table, th, td { */
+  /* border: 1px solid black; */
+
+/* } */
+
+td {
+    text-align: center;
+}

@@ -87,11 +87,11 @@ if(isset($loadMovie)) {
                     <a href="./">Home</a>
                 </div>
                 <div id="my_movies">
-                    My Movies
+                    <a href="./my_movies.php">My Movies</a>
                 </div>
-                <div id="recommendations">
+                <!-- <div id="recommendations">
                     Recommendations
-                </div>
+                </div> -->
             </div>
             <input placeholder="Search movies" style="border-radius: 8px;" class="typeahead"></input>
             
