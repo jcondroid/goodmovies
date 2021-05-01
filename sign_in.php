@@ -61,9 +61,11 @@ function authenticate_person() {
             ?>
             <body style="background-color: #cccccc;">
                 <div id="header">
-                             <div style="height: 67px">
-            <img src='./resources/logonew.svg' style="width: 100%;max-height: 100%">
-         </div>
+                    <div style="height: 67px">
+                        <a href="./">
+                            <img src='./resources/logonew.svg' style="width: 100%;max-height: 100%">
+                        </a>
+                    </div>
                 </div>
 
                 <div id="signup_container">

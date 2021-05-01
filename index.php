@@ -1,5 +1,6 @@
 <?php
 include_once("header_page.php");
+print_r($_SESSION);
 ?>
 
     <!-- Test Fetch -->
@@ -8,18 +9,20 @@ include_once("header_page.php");
     if (!(isset($_SESSION['person_id']))) {
     ?>
     <div id="marketing" class="marketing-image">
-        <!-- <img src="marketing.png" alt="Marketing" style="width:100%"> -->
+        <div style="height: 5%;"></div>
         <div id="marketing_signup_container">
             <div id="marketing_signup_row_1">
                 <h2>Create a free account!</h2>
             </div>
             <div id="marketing_signup_row_2">
                 <form name="sign_up" id="sign_up" method="post" action="./sign_up.php">
-                    <input name="first_name" id="formSignUpFirstName" placeholder="Name"></input>
-                    <input name="email" id="formSignUpEmail" placeholder="Email address"></input>
-                    <input name="password" id="formSignUpPassword" placeholder="Password" type="password"></input>
-                    <input type="submit" value="Sign up">
-                    <p>By clicking "Sign up" I agree to the Logo Terms of Service and confirm that I am at least 13 years old.</p>
+                    <input name="first_name" id="formSignUpFirstName" placeholder="Name" class="create_account_input"></input>
+                    <input name="email" id="formSignUpEmail" placeholder="Email address" class="create_account_input"></input>
+                    <input name="password" id="formSignUpPassword" placeholder="Password" type="password" class="create_account_input"></input>
+                    <div class="sign_up_button_container">
+                        <input type="submit" value="Sign up" class="btn btn-primary">
+                        <p>By clicking "Sign up" I agree to the Logo Terms of Service and confirm that I am at least 13 years old.</p>
+                    </div>
                 </form>
             </div>
         </div>

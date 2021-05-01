@@ -1,6 +1,6 @@
 <?php
-header("Cache-Control: no cache");
-session_cache_limiter("private_no_expire");
+// header("Cache-Control: no cache");
+// session_cache_limiter("private_no_expire");
 session_start();
 // print_r($person);
 require_once("library.php");
@@ -11,6 +11,7 @@ require_once("library.php");
 <title>GoodMovies</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 <script defer src="./javascript/all.js"></script>
 <script src="./javascript/jquery-3.6.0.min.js"></script>
 <script  type="text/javascript" src="./javascript/typeahead.bundle.js"></script>
@@ -100,8 +101,15 @@ if(isset($loadMovie)) {
             <a href="profile.php">
                 <i class="fas fa-user" style="padding: 0 5px;"></i>
             </a>
+
+            <a href="logout.php">
+                Logout
+            </a>
             
-            <i class="fas fa-users" style="padding: 0 5px; display: none;"></i>
+            <!-- <a href="friends">
+                <i class="fas fa-users" style="padding: 0 5px;"></i>
+            </a> -->
+            
             
             <?php
             } else {
