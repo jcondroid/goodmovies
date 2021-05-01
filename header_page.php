@@ -76,7 +76,9 @@ if(isset($loadMovie)) {
 
     <div id="header">
          <div style="height: 67px">
-            <img src='./resources/logonew.svg' style="width: 100%;max-height: 100%">
+            <a href="./">
+                <img src='./resources/logonew.svg' style="width: 100%;max-height: 100%">
+            </a>
          </div>
         <div id="header_login_container" style="width:60%">
             <?php
