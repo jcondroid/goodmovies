@@ -1,5 +1,5 @@
 html, body {
-    height:100%;
+    height: 100%;
     font-size: 18px;
     margin: 0;
     min-width: 1000px;
@@ -28,7 +28,6 @@ html, body {
 .secondary_color3 {
     background-color: #873b74;
 }
-
 
 #header {
     display: flex;
@@ -63,6 +62,7 @@ html, body {
 /* #marketing {
     background-image: url("../resources/marketing.png");
 } */
+
 #header_login_row_1 {
     width: 100%;
 }
@@ -154,7 +154,7 @@ form#sign_in {
     color: white;
 }
 
-#movies_editor_picks{
+#movies_editor_picks {
     width: 85%;
     margin-block-start: 0.5em;
     margin-block-end: 0.5em;
@@ -229,11 +229,11 @@ form#sign_in {
 }
 
 .hide {
-    position:absolute;
-    top:-1px;
-    left:-1px;
-    width:1px;
-    height:1px;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 1px;
+    height: 1px;
 }
 
 .movie_title {
@@ -246,6 +246,12 @@ form#sign_in {
     font-weight: bold;
 }
 
+.movie_director {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 50%;
+}
+
 .move_description {
     display: flex;
     flex-flow: column nowrap;
@@ -253,73 +259,89 @@ form#sign_in {
 }
 
 /*---------- star rating ----------*/
+
 .movie_rating_container {
     display: flex;
     flex-flow: row nowrap;
     align-items: flex-start;
     justify-content: space-around;
 }
+
 .unselected_stars {
     display: flex;
     color: #b1b1b1c7;
 }
+
 .selected_stars {
     color: #FFBC0B;
 }
 
 /*---------- typeahead ----------*/
+
 .bs-example {
-	font-family: sans-serif;
-	position: relative;
-	margin: 100px;
+    font-family: sans-serif;
+    position: relative;
+    margin: 100px;
 }
+
 .typeahead, .tt-query, .tt-hint {
-	border: 2px solid #CCCCCC;
-	border-radius: 8px;
-	font-size: 22px; /* Set input font size */
-	height: 30px;
-	line-height: 30px;
-	outline: medium none;
-	/* padding: 8px 12px; */
-	width: 396px;
+    border: 2px solid #CCCCCC;
+    border-radius: 8px;
+    font-size: 22px;
+    /* Set input font size */
+    height: 30px;
+    line-height: 30px;
+    outline: medium none;
+    /* padding: 8px 12px; */
+    width: 396px;
 }
+
 .typeahead {
-	background-color: #FFFFFF;
+    background-color: #FFFFFF;
 }
+
 .typeahead:focus {
-	border: 2px solid #0097CF;
+    border: 2px solid #0097CF;
 }
+
 .tt-query {
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
 }
+
 .tt-hint {
-	color: #999999;
+    color: #999999;
 }
+
 .tt-menu {
-	background-color: #FFFFFF;
-	border: 1px solid rgba(0, 0, 0, 0.2);
-	border-radius: 8px;
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	margin-top: 12px;
-	padding: 8px 0;
-	width: 422px;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 12px;
+    padding: 8px 0;
+    width: 422px;
 }
+
 .tt-suggestion {
-	font-size: 22px;  /* Set suggestion dropdown font size */
-	padding: 3px 20px;
+    font-size: 22px;
+    /* Set suggestion dropdown font size */
+    padding: 3px 20px;
 }
+
 .tt-suggestion:hover {
-	cursor: pointer;
-	background-color: #0097CF;
-	color: #FFFFFF;
+    cursor: pointer;
+    background-color: #0097CF;
+    color: #FFFFFF;
 }
+
 .tt-suggestion p {
-	margin: 0;
+    margin: 0;
 }
 
 /**
 * My Movies
 */
+
 .my_movies_table {
     width: 85%;
     margin-block-start: 0.5em;
@@ -329,10 +351,11 @@ form#sign_in {
 }
 
 /* table, th, td { */
-  /* border: 1px solid black; */
+
+/* border: 1px solid black; */
 
 /* } */
 
-td {
+tr th, td {
     text-align: center;
 }

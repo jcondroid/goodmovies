@@ -1,12 +1,8 @@
 <?php
 include_once("header_page.php");
-?>
 
-    <!-- Test Fetch -->
-    <!-- <button onclick="send_to_api('getperson', '', '', 1)">Click HERE</button> -->
-    <?php
-    if (!(isset($_SESSION['person_id']))) {
-    ?>
+if (!(isset($_SESSION['person_id']))) { // If there is no session person_id then user is logged out
+?>
     <div id="marketing" class="marketing-image">
         <div style="height: 5%;"></div>
         <div id="marketing_signup_container">
@@ -26,28 +22,23 @@ include_once("header_page.php");
             </div>
         </div>
     </div>
-    <?php
-    } else {
-        // Show movies
-        ?>
-        <div id="movies_editor_picks">Editor's Picks</div>
-        <hr style="width: 85%;">
-        <div id=movies_container>
-            <!-- <div id="movie">
-                <div id="poster_link"></div>
-                <div id="movie_title"></div>
-            </div> -->
-        </div>
-        <?php
-    }
-    ?>
+<?php
+} else { // Show movies uses movies.js to generate content
+?>
+    <div id="movies_editor_picks">Editor's Picks</div>
+    <hr style="width: 85%;">
+    <div id=movies_container>
+    </div>
+<?php
+}
+?>
 
 <script src="./javascript/person.js"></script>
 <script src="./javascript/movies.js"></script>
 <script>
-$(document).ready(function(){
-    show_body(true);
-});
+    $(document).ready(function() {
+        show_body(true);
+    });
 </script>
 </body>
 

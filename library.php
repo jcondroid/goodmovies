@@ -16,8 +16,6 @@ function insert_person_movie_by_person_and_movie_id($person_id, $movie_id, $rati
  * READ
  */
 function get_person_by_person_id($person_id) {
-    // gloabl $db;
-
     $sql = "SELECT *
             FROM person
             WHERE person_id=".$person_id;
@@ -90,6 +88,3 @@ function update_person_by_person_id($person_id, $first_name, $last_name, $gender
     echo $sql;
     return update($sql);
 }
-
-
-?>

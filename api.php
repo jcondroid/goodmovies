@@ -2,6 +2,7 @@
 header("Content-Type:application/json");
 require_once("library.php");
 
+// For each request to api.php we use this controller to funnel requests into specified actions
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 
@@ -39,6 +40,7 @@ if (!empty($_GET['action'])) {
 /**
  * CREATE
  */
+// These are stubs for future Admin features
 function createMovie()
 {
 }
@@ -53,13 +55,13 @@ function getPersonMovie()
 {
     isset($_GET['movie_id']) ? $movie_id = $_GET['movie_id'] : $movie_id = "";
     isset($_GET['person_id']) ? $person_id = $_GET['person_id'] : $person_id = "";
-    
+
     if (!empty($movie_id) && !empty($person_id)) {
         $personMovie = get_person_movie_by_person_and_movie_id($person_id, $movie_id);
     }
 
     if (empty($personMovie)) {
-        response(401, "Could not find person movie record", NULL);
+        response(200, "Could not find person movie record", "");
     } else {
         $personMovieArray = array();
         $personMovieArray = array(
@@ -72,7 +74,7 @@ function getPersonMovie()
 function getMovieByMovieId()
 {
     isset($_GET['movie_id']) ? $movie_id = $_GET['movie_id'] : $movie_id = "";
-    
+
     if (!empty($movie_id)) {
         $movie = get_movie_by_movie_id($movie_id);
     }
@@ -80,16 +82,6 @@ function getMovieByMovieId()
     if (empty($movie)) {
         response(401, "Could not find movie", NULL);
     } else {
-        $movie_array = array();
-        // for($i = 0; $i < sizeof($movies); $i++) {
-        //     $movie_array = array(
-        //         'movie_id' => $movies[$i], 'poster_link' => $movies[1], 'title' => $movies[2], 'released_year' => $movies[3]
-        //     );
-        //     array_push($movies_array, )
-        // }
-        $movie_array = array(
-            'movie_id' => $movie[0], 'poster_link' => $movie[1], 'title' => $movie[2], 'released_year' => $movie[3]
-        );
         response(200, "Success: movies Found ", $movie);
     }
 }
@@ -97,8 +89,7 @@ function getMovieByMovieId()
 function getMovieByTitle()
 {
     isset($_GET['title']) ? $title = $_GET['title'] : $title = "";
-    // echo "TITLE = " . $title;
-    
+
     if (!empty($title)) {
         $movie_id = get_movie_id_by_title($title);
     }
@@ -107,9 +98,7 @@ function getMovieByTitle()
         response(401, "Could not find movie id using title", NULL);
     } else {
         $movie_id = $movie_id[0];
-        // echo "mid: " . $movie_id;
         response(200, "Movie id found", $movie_id);
-        // header("Location: movie.php?movie_id=$movie_id");
     }
 }
 
@@ -120,16 +109,6 @@ function getMovies()
     if (empty($movies)) {
         response(401, "Could not find movies", NULL);
     } else {
-        $movies_array = array();
-        // for($i = 0; $i < sizeof($movies); $i++) {
-        //     $movie_array = array(
-        //         'movie_id' => $movies[$i], 'poster_link' => $movies[1], 'title' => $movies[2], 'released_year' => $movies[3]
-        //     );
-        //     array_push($movies_array, )
-        // }
-        // $movies_array = array(
-        //     'movie_id' => $movies[0], 'poster_link' => $movies[1], 'title' => $movies[2], 'released_year' => $movies[3]
-        // );
         response(200, "Success: movies Found ", $movies);
     }
 }
@@ -142,30 +121,23 @@ function getMoviesArray()
         response(401, "Could not find movies", NULL);
     } else {
         $movies_array = array_column($movies, 0);
-        // for($i = 0; $i < sizeof($movies); $i++) {
-            // $movie_array = array(
-            //     'movie_id' => $movies[$i], 'poster_link' => $movies[1], 'title' => $movies[2], 'released_year' => $movies[3]
-            // );
-            // array_push($movies_array, $movies[$i]);
-        // }
-        // $movies_array = array(
-        //     'movie_id' => $movies[0], 'poster_link' => $movies[1], 'title' => $movies[2], 'released_year' => $movies[3]
-        // );
         response(200, "Success: movies Found ", $movies_array);
     }
 }
 
+/**
+ * insertPersonMovie
+ * This is the most complex of the api calls. This call tries to update a person_movie record first if a person_movie record
+ * already exists. If one does not exist then it will insert a new record.
+ */
 function insertPersonMovie()
 {
     isset($_GET['movie_id']) ? $movie_id = $_GET['movie_id'] : $movie_id = "";
     isset($_GET['person_id']) ? $person_id = $_GET['person_id'] : $person_id = "";
     isset($_GET['rating']) ? $rating = $_GET['rating'] : $rating = "";
-    
+
     if (!empty($movie_id) && !empty($person_id) && !empty($rating)) {
-        // echo "test";
-        // Try to update first
         $updatePersonMovie = update_person_movie_by_person_and_movie_id($person_id, $movie_id, $rating);
-        // echo $updatePersonMovie;
 
         if (empty($updatePersonMovie)) { // No person_movie record exists so create one
             $insertPersonMovie = insert_person_movie_by_person_and_movie_id($person_id, $movie_id, $rating);
@@ -174,12 +146,7 @@ function insertPersonMovie()
             } else {
                 response(200, "Success: inserted new person movie record ", $insertPersonMovie);
             }
-            // response(401, "Could not find person movie record", NULL);
         } else {
-            // $personMovieArray = array();
-            // $personMovieArray = array(
-                // 'person_movie_id' => $personMovie[0], 'person_id' => $personMovie[1], 'movie_id' => $personMovie[2], 'rating' => $personMovie[3]
-            // );
             response(200, "Success: updated person movie record ", $updatePersonMovie);
         }
     } else {
@@ -212,44 +179,26 @@ function getPerson()
 function updateMovie($movieID)
 {
 }
-function updatePerson() {
-    // print_r($_SESSION);
-
+function updatePerson()
+{
     if (!empty($_GET['person_id'])) {
         $person_id = $_GET['person_id'];
-        // print_r($_GET);
-        // print_r($_POST);
-    
-        if(isset($person_id) && $person_id > 0) {
+
+        if (isset($person_id) && $person_id > 0) {
             header("HTTP/1.1 200");
-    
+
             $person_id = $_GET['person_id'];
             isset($_GET['first_name']) ? $first_name = $_GET["first_name"] : $first_name = "";
             isset($_GET['last_name']) ? $last_name = $_GET["last_name"] : $last_name = "";
             isset($_GET['gender']) ? $gender = $_GET["gender"] : $gender = "";
-        
-            // $json_response = json_encode($response);
+
             $status = update_person_by_person_id($person_id, $first_name, $last_name, $gender);
-        
-            // $sql = "UPDATE person
-            //         SET first_name=\"$first_name\"
-            //         AND last_name=\"$last_name\"
-            //         AND gender=\"$gender\"
-            //         WHERE person_id=$person_id";
-            // echo $sql;
-            // return update($sql);
 
             if (empty($status)) {
                 response(401, "Could not update person", NULL);
             } else {
-                // $person_array = array(
-                //     'person_id' => $person[0], 'first_name' => $person[1], 'last_name' => $person[2], 'email' => $person[3]
-                // );
                 response(200, "Success: updated person", $status);
             }
-            // echo "set";
-    
-            // response(200, "Person id $person_id", NULL);
         } else {
             response(400, "Invalid Request", NULL);
         }

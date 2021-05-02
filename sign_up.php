@@ -10,24 +10,18 @@ session_start();
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<!-- <script src="./javascript/person.js"></script> -->
 
 <?php
 require_once("db.php");
-// print_r($_SESSION);
 is_already_logged_in();
 $email = null;
 $password = null;
-
-// echo "hi";
 
 if(validate_account_does_not_exist()) {
     if(input_validation_passes()) {
         sign_up();
     }
-    
 } else {
-    // echo "Sorry, you must enter a name to sign up for GoodMovies.";
 }
 
 close_db();
@@ -40,7 +34,6 @@ function is_already_logged_in() {
 }
 
 function validate_account_does_not_exist() {
-    // echo "test</br>";
     if (isset($_POST['email'])) {
         $email = $_POST['email'];
 
@@ -131,13 +124,11 @@ function sign_up() {
             
             $data = insert($sql);
             if($data) {
-                // echo "response: " . $data;
                 sign_in($email, $password);
             } else {
                 $error_message = 'Sorry, something went wrong. Please try again.';
                 display_sign_up($error_message);
             }
-            // sign_in();
         }
     }
 }
@@ -179,7 +170,6 @@ function display_sign_up($error_message) {
     <body style="background-color: #cccccc;">
         <div id="header">
             <div style="height: 67px">
-                <!-- <img src='./resources/logonew.svg' style="width: 100%;max-height: 100%"> -->
                 <a href="./">
                     <img src='./resources/logonew.svg' style="width: 100%;max-height: 100%">
                 </a>
@@ -196,27 +186,15 @@ function display_sign_up($error_message) {
             </div>
             <div id="signup_row_2" style="width: 100%;">
             <div id="marketing_signup_container" style="flex-flow: column nowrap; width: 100%;">
-                <!-- <div id="marketing_signup_row_1">
-                    <h2>Sign Up with Email</h2>
-                </div> -->
                 <h2>Sign Up with Email</h2>
                 <div id="marketing_signup_row_2">
                     <form name="sign_up" id="sign_up" method="post" action="./sign_up.php">
                         <input name="first_name" id="formSignUpFirstName" placeholder="First Name" class="create_account_input" style="width: 100%;"></input>
                         <input name="email" id="formSignUpEmail" placeholder="Email address" class="create_account_input" style="width: 100%;"></input>
                         <input name="password" id="formSignUpPassword" placeholder="Password" type="password" class="create_account_input" style="width: 100%;"></input>
-                        <!-- <input name="first_name" id="formSignUpFirstName" placeholder="First Name"></input>
-                        <input name="email" id="formSignUpEmail" placeholder="Email address"></input>
-                        <input name="password" id="formSignUpPassword" placeholder="Password" type="password"></input> -->
-                        <!-- <input type="submit" value="Sign up">
-                        <p>By clicking "Sign up" I agree to the Logo Terms of Service and confirm that I am at least 13 years old.</p> -->
-                        <!-- <div class="sign_up_button_container"> -->
-                            <input type="submit" value="Sign up" class="btn btn-primary" style="background-color: #7917a6;">
-                            <!-- <p class="sign_up_terms">By clicking "Sign up" I agree to the Logo Terms of Service and confirm that I am at least 13 years old.</p> -->
-                        <!-- </div> -->
+                        <input type="submit" value="Sign up" class="btn btn-primary" style="background-color: #7917a6;">
                     </form>
                 </div>
-            <!-- </div> -->
             </div>
         </div>
 

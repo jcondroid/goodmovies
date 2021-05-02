@@ -1,27 +1,15 @@
 get_movies();
 
 function send_to_api(action) {
-    // console.log("send_to_api");
     let url = "./api.php?action=" + action;
-
-    // var fetch_request = new Request(url, {
-    //     method: "GET",
-    //     headers: {
-    //         "Accept": "application/json",
-    //         "Content-Type": "application/json"
-    //     }
-    // });
 
     fetch(url)
         .then((response) => response.json())
         .then(function (data) {
-            // console.log(data);
             results = data.data;
             let parent = document.getElementById("movies_container");
-            
-            
-            // Width of each element is 180px
 
+            // Width of each element is 180px
             for(var i = 0; i < 20; i++) {
                 var movie_info_div = document.createElement("div");
                 movie_info_div.className = "movie_info";
@@ -48,12 +36,7 @@ function send_to_api(action) {
                 movie_info_div.appendChild(description_div);
                 
                 parent.appendChild(movie_info_div);
-                
-                // document.getElementById("poster_link")
-                // document.getElementById("movie_title")
             }
-            // document.getElementById("poster_link").style.backgroundImage = "url(\"" + results[0][1] + "\")";
-            // document.getElementById("movie_title").innerHTML = results[0][2];
         });
 }
 

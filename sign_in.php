@@ -10,11 +10,9 @@ session_start();
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<!-- <script src="./javascript/person.js"></script> -->
 
 <?php
 require_once("db.php");
-// print_r($_SESSION);
 is_already_logged_in();
 authenticate_person();
 
@@ -26,20 +24,8 @@ function is_already_logged_in() {
     }
 }
 
-function log_out() {
-    if ((isset($_SESSION['person_id'])) && isset($_GET['logout'])) {
-        session_destroy();
-
-        unset($_SESSION['person_id']);
-        unset($_SESSION['first_name']);
-        unset($_SESSION['last_name']);
-        unset($_SESSION['email']);
-        header("location: index.php");
-    }
-}
-
 function authenticate_person() {
-    if(isset($_POST['email']) && isset($_POST['password'])) { // Required to check if authentication is successful
+    if(isset($_POST['email']) && isset($_POST['password'])) { // Required data to check if authentication is successful
         $email = $_POST['email'];
         $password = $_POST['password'];
 
@@ -67,7 +53,6 @@ function authenticate_person() {
     } else {
         header("location: index.php");
     }
-
 }
 
 function display_sign_in($error_message) {
