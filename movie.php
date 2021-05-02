@@ -51,5 +51,9 @@ include_once("header_page.php");
 
 <script src="./javascript/person.js"></script>
 <script src="./javascript/movie.js"></script>
+<script>
+$(document).ready(function(){
+    show_body(false);
+});
+</script>
 </body>
-

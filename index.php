@@ -44,6 +44,11 @@ include_once("header_page.php");
 
 <script src="./javascript/person.js"></script>
 <script src="./javascript/movies.js"></script>
+<script>
+$(document).ready(function(){
+    show_body(true);
+});
+</script>
 </body>
 
 </html>

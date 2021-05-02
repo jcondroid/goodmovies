@@ -20,4 +20,13 @@ function send(that) {
         });
 }
 
-document.body.style.display="block"; // So it doesn't show elements moving
+// console.log("triggered0");
+
+// document.onload
+function show_body(show_boolean) {
+    console.log("triggered1");
+    if (show_boolean) {
+        
+        document.body.style.display = "block"; // So it doesn't show elements moving
+    }
+}

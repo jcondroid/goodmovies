@@ -116,8 +116,10 @@ function display_page(movie_id, data) {
     // movie_info_div.appendChild(gmAvgRating);
     // movie_info_div.appendChild(tomatoMeterRating);
     
-    parent.appendChild(movie_info_div);
+    // parent.appendChild(movie_info_div);
     parent.appendChild(description_div);
+    
+    // document.getElementsByClassName("movie_container").style.display="flex";
 }
 
 function display_rating(rating) {
@@ -126,6 +128,7 @@ function display_rating(rating) {
         // console.log("i ", i);
         document.getElementById("rating" + i).style.color = "#FFBC0B";
     }
+    document.body.style.display="block";
 }
 
 function get_session() {
